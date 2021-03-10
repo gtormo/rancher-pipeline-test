@@ -1,5 +1,8 @@
 stages:
 - name: Build
+  when:
+    branch: development
+    event: [ push, pull_request ]
   steps:
   - runScriptConfig:
       image: golang:1.11
@@ -21,3 +24,6 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+branch:
+  include: [ dev ]
+  exclude: [ master ]
