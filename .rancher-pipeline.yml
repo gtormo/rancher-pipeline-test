@@ -14,7 +14,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: /robinrover/example-helloserver:${CICD_EXECUTION_SEQUENCE}
+      tag: robinrover/example-helloserver:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: de.icr.io
 - name: Deploy
